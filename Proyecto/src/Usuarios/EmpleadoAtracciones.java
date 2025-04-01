@@ -1,0 +1,59 @@
+package Usuarios;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import Atracciones.Atraccion;
+import Atracciones.AtraccionMecanica;
+
+public class EmpleadoAtracciones extends Empleado{
+	private List<Atraccion> atraccionesCapacitadas;
+	private String nivelRiesgo;
+	private Atraccion atraccion;
+	
+	public EmpleadoAtracciones(String login, String password, int edad, float altura,
+			String labor, String nivel) {
+		super(login, password, edad, altura, "empleadoAtracciones", labor);
+		this.atraccion=null;
+		this.nivelRiesgo=nivel;
+		this.atraccionesCapacitadas= new ArrayList<Atraccion>();
+	}
+	
+	public String getnivel() {
+		return nivelRiesgo;
+	}
+	
+	public Atraccion getAtraccion() {
+		return atraccion;
+	}
+	
+	public void setNivel(String nivel) {
+		nivelRiesgo=nivel;
+	}
+	
+	public void setAtraccion(AtraccionMecanica Atraccion) throws Exception {
+		if (Atraccion.getNivel()=="medio") {
+			atraccion=Atraccion;
+		}
+		else {
+			boolean Noencontrado= true;
+			int i=0;
+			while (i<atraccionesCapacitadas.size() && Noencontrado) {
+				Atraccion atract= atraccionesCapacitadas.get(i);
+				if (atract == Atraccion) {
+					Noencontrado= false;
+					atraccion=Atraccion;
+				}
+				i++;
+			}
+			if (Noencontrado) {
+				throw new Exception("El empleado no se encuentra capacitado para esta atracción");
+			}
+		}
+		
+	}
+	
+	public void agregarAtraccion(Atraccion Atraccion) {
+		atraccionesCapacitadas.addLast(Atraccion);
+	}
+}
