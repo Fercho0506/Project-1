@@ -3,6 +3,7 @@ package Atracciones;
 import java.util.Date;
 
 public class AtraccionCultural extends Atraccion{
+	private static final long serialVersionUID = 1L;
 	private int edadMin;
 	
 	public AtraccionCultural(String nombre, int capacidad, String ubicacion, int empleadosMin, String exclusividad, Date temporada,

@@ -1,5 +1,6 @@
 package Usuarios;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,8 @@ import Modelo.Compra;
 import Tiquetes.FastPass;
 import Tiquetes.Tiquete;
 
-public abstract class Usuario {
+public abstract class Usuario implements Serializable {
+    private static final long serialVersionUID = 1L;
 	private String login;
 	private String password;
 	private String tipoUsuario;

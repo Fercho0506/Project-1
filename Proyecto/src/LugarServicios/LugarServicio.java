@@ -1,13 +1,14 @@
 package LugarServicios;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import Modelo.Compra;
-import Usuarios.Cajero;
 import Usuarios.Empleado;
 
-public abstract class LugarServicio {
+public class LugarServicio implements Serializable {
+    private static final long serialVersionUID = 1L;
 	private List<Empleado> empleados;
 	private Empleado cajero;
 	private String tipoLugar;

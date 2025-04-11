@@ -11,9 +11,9 @@ import Atracciones.Espectaculo;
 import LugarServicios.Cafeteria;
 import LugarServicios.LugarServicio;
 import LugarServicios.Taquilla;
+import Persistencia.Persistencia;
 import Tiquetes.FastPass;
 import Tiquetes.Tiquete;
-import Tiquetes.TiqueteRegular;
 import Tiquetes.TiqueteTemporada;
 import Usuarios.Cajero;
 import Usuarios.Cocinero;
@@ -22,7 +22,11 @@ import Usuarios.EmpleadoAtracciones;
 import Usuarios.EmpleadoServiciosgenerales;
 import Usuarios.Usuario;
 
-public class Parque {
+import java.io.Serializable;
+
+public class Parque implements Serializable {
+    private static final long serialVersionUID = 1L;
+
 	private String direccion;
 	private String nombre;
 	private int capacidad;
@@ -356,5 +360,25 @@ public class Parque {
 			}
 		}
 	}
+	
+	public void cargarData1() {
+	    Parque parqueCargado = (Parque) Persistencia.cargarObjeto("parque.bin");
+	    if (parqueCargado != null) {
+	        this.direccion = parqueCargado.getDireccion();
+	        this.nombre = parqueCargado.getNombre();
+	        this.capacidad = parqueCargado.getCapacidad();
+	        this.abierto = parqueCargado.getAbierto();
+	        this.usuarios = new HashMap<>();
+	        this.usuarios.putAll(parqueCargado.usuarios);
+	        this.atracciones = new ArrayList<>(parqueCargado.atracciones);
+	        this.espectaculos = new ArrayList<>(parqueCargado.espectaculos);
+	        this.lugaresServicios = new ArrayList<>(parqueCargado.lugaresServicios);
+	    }
+	}
+
+	public void salvarData1() {
+	    Persistencia.guardarObjeto(this, "parque.bin");
+	}
+
 	
 }

@@ -4,6 +4,7 @@ import Atracciones.Atraccion;
 import Usuarios.Usuario;
 
 public class Entrada extends Tiquete{
+	private static final long serialVersionUID = 1L;
 	private Atraccion atraccion;
 	
 	public Entrada(Usuario usuario, int precio, Atraccion atraccion) {

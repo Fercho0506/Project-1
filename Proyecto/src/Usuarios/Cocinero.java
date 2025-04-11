@@ -1,6 +1,7 @@
 package Usuarios;
 
 public class Cocinero extends Empleado{
+	private static final long serialVersionUID = 1L;
 	
 	
 	public Cocinero (String login, String password, int edad, float altura, String labor) {

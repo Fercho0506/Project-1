@@ -2,7 +2,8 @@ package Tiquetes;
 
 import Usuarios.Usuario;
 
-public class TiqueteTemporada extends Tiquete{
+public class TiqueteTemporada extends Tiquete {
+    private static final long serialVersionUID = 1L;
 	
 	private String inicio;
 	private String fin;

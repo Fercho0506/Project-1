@@ -6,10 +6,10 @@ import Atracciones.AtraccionMecanica;
 import LugarServicios.LugarServicio;
 import Tiquetes.Entrada;
 import Tiquetes.Tiquete;
-import Tiquetes.TiqueteRegular;
 import Tiquetes.TiqueteTemporada;
 
 public class Cajero extends Empleado{
+	private static final long serialVersionUID = 1L;
 	private Atraccion atraccion;
 	private LugarServicio lugar;
 	

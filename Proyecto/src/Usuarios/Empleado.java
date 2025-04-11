@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Empleado extends Usuario{
+	private static final long serialVersionUID = 1L;
 	private String tipoEmpleado;
 	private List<String> turnos;
 	private String labor;

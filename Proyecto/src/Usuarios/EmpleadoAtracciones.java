@@ -7,6 +7,7 @@ import Atracciones.Atraccion;
 import Atracciones.AtraccionMecanica;
 
 public class EmpleadoAtracciones extends Empleado{
+	private static final long serialVersionUID = 1L;
 	private List<Atraccion> atraccionesCapacitadas;
 	private String nivelRiesgo;
 	private Atraccion atraccion;

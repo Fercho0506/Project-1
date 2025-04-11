@@ -1,5 +1,6 @@
 package Atracciones;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -8,7 +9,8 @@ import Usuarios.Cajero;
 import Usuarios.Empleado;
 import Usuarios.EmpleadoAtracciones;
 
-public abstract class Atraccion {
+public abstract class Atraccion implements Serializable {
+    private static final long serialVersionUID = 1L;
 	
 	private String nombre;
 	private int capacidad;

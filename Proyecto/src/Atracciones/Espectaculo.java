@@ -1,8 +1,12 @@
 package Atracciones;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Espectaculo {
+
+
+public class Espectaculo implements Serializable {
+    private static final long serialVersionUID = 1L;
 	private String nombre;
 	private Date fecha;
 	private String horario;

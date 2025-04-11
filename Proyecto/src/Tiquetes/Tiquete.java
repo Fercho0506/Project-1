@@ -1,8 +1,12 @@
 package Tiquetes;
 
+import java.io.Serializable;
+
 import Usuarios.Usuario;
 
-public abstract class Tiquete {
+public abstract class Tiquete implements Serializable {
+    private static final long serialVersionUID = 1L;
+
 	private String exclusividad;
 	private String tipoTiquete;
 	private boolean usado;

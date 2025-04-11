@@ -7,6 +7,7 @@ import Usuarios.Cocinero;
 
 
 public class Cafeteria extends LugarServicio{
+	private static final long serialVersionUID = 1L;
 	private HashMap<String, Integer> productos;
 	private Cocinero cocinero;
 	
