@@ -245,7 +245,7 @@ public class Parque implements Serializable {
 		return numero;
 	}
 	
-	public CompraAtracciones realizarCompraTiquetesOnline(Usuario usuario, List<Tiquete> tiquetes, List<FastPass> fast) {
+	public CompraAtracciones registrarCompraTiquetesOnline(Usuario usuario, List<Tiquete> tiquetes, List<FastPass> fast) {
 		float precio=0;
 		CompraAtracciones compra= new CompraAtracciones(generarCodigoCompra(), usuario);
 		if (usuario.getTipoUsuario()== "cliente") {
@@ -280,10 +280,10 @@ public class Parque implements Serializable {
 		
 	}
 	
-	public void realizarCompraTiquetesTaquilla(Usuario usuario, List<Tiquete> tiquetes, List<FastPass> fast, 
+	public void registrarCompraTiquetesTaquilla(Usuario usuario, List<Tiquete> tiquetes, List<FastPass> fast, 
 			Taquilla taquilla) throws Exception{
 		if (taquilla.getCajero()!=null) {
-			CompraAtracciones compra=realizarCompraTiquetesOnline(usuario, tiquetes, fast);
+			CompraAtracciones compra=registrarCompraTiquetesOnline(usuario, tiquetes, fast);
 			taquilla.registrarVenta(compra);
 		}
 		else {
